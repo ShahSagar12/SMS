@@ -38,6 +38,8 @@ public class Library {
 	@Column(name="Status")
 	private int status;
 	
+	
+	
 
 	public int getLibId() {
 		return libId;
