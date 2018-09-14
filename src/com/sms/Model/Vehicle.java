@@ -20,6 +20,11 @@ public class Vehicle {
 
 	@Column(name = "Vehicle_Route")
 	private String vehRoute;
+	
+
+	public Vehicle() {
+		
+	}
 
 	public Vehicle(int vehId, String vehRegNo, String vehRoute) {
 		super();
