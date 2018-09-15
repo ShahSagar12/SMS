@@ -63,16 +63,16 @@ public class LibraryDAOImpl implements LibraryDAO {
 		Library library=new Library();
 		session=sessionFactory.openSession();
 		try {
-		session.beginTransaction();
-		library=session.get(library.getClass(), id);	
-		session.getTransaction().commit();	
+			session.beginTransaction();
+			library=session.get(Library.class, id);	
+			session.getTransaction().commit();	
 		}catch(Exception exp) {
 			session.getTransaction().rollback();
 			System.out.println("ERROR:GETTING LIBRARY :"+exp);				
 		}
 		return library;
 	}
-	
+
 	@Override
 	public List<Library> list() {
 		List<Library> allLibrary=new ArrayList<>();

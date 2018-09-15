@@ -24,6 +24,10 @@ public class Subject {
 		this.subName = subName;
 	}
 
+	public Subject() {
+		
+	}
+
 	public int getSubId() {
 		return subId;
 	}

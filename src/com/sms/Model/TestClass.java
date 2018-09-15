@@ -17,9 +17,6 @@ public class TestClass {
 		String date = simpleDateFormat.format(new Date());
 		System.out.println(date);
 
-		
-		
-		
 		LibraryService libraryService=new LibraryServiceImpl();
 		Library library=new Library();
 		library.setLibId(10);

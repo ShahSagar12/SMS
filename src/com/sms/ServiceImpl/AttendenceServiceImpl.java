@@ -33,7 +33,7 @@ public class AttendenceServiceImpl implements AttendenceService{
 
 	@Override
 	public List<Attendence> list() {
-		return list();
+		return attendenceDAO.list();
 	}
 }
 

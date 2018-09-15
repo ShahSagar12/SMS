@@ -38,7 +38,7 @@ public class LibraryServiceImpl implements LibraryService {
 
 	@Override
 	public Library get(int id) {
-		// TODO Auto-generated method stub
+		
 		return libraryDAO.get(id);
 	}
 
