@@ -17,7 +17,7 @@ public class Staff {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="Staff_Id")
-	private int id;
+	private int staffId;
 	
 	@Column(name="Staff_Name")
 	private String staffName;
@@ -50,9 +50,9 @@ public class Staff {
 	public Staff() {
 		
 	}
-	public Staff(int id, String staffName, String staffAddress, String staffPost, int status, Vehicle vehicle, Library library,Attendence attendence,StaffAccount staffAccount) {
+	public Staff(int staffId, String staffName, String staffAddress, String staffPost, int status, Vehicle vehicle, Library library,Attendence attendence,StaffAccount staffAccount) {
 		super();
-		this.id = id;
+		this.staffId = staffId;
 		this.staffName = staffName;
 		this.staffAddress = staffAddress;
 		this.staffPost = staffPost;
@@ -62,19 +62,6 @@ public class Staff {
 		this.attendence=attendence;
 		this.staffAccount=staffAccount;
 	}
-
-	public Staff(String staffName, String staffAddress, String staffPost, int status, Vehicle vehicle, Library library,Attendence attendence,StaffAccount staffAccount) {
-		super();
-		this.staffName = staffName;
-		this.staffAddress = staffAddress;
-		this.staffPost = staffPost;
-		this.status = status;
-		this.vehicle=vehicle;
-		this.library=library;
-		this.attendence=attendence;
-		this.staffAccount=staffAccount;
-	}
-	
 
 	public StaffAccount getStaffAccount() {
 		return staffAccount;
@@ -104,12 +91,12 @@ public class Staff {
 
 	
 
-	public int getId() {
-		return id;
+	public int getStaffId() {
+		return staffId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setStaffId(int id) {
+		this.staffId = id;
 	}
 
 	public String getStaffName() {
@@ -153,7 +140,7 @@ public class Staff {
 	}
 	@Override
 	public String toString() {
-		return "Staff [id=" + id + ", staffName=" + staffName + ", staffAddress=" + staffAddress + ", staffPost="
+		return "Staff [staffId=" + staffId + ", staffName=" + staffName + ", staffAddress=" + staffAddress + ", staffPost="
 				+ staffPost + ", vehicle=" + vehicle + ", library=" + library + ", attendence=" + attendence
 				+ ", staffAccount=" + staffAccount + ", status=" + status + "]";
 	}
