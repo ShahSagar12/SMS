@@ -14,6 +14,7 @@ import com.sms.dbutils.SessionConnector;
 
 public class StudentDAOImpl implements StudentDAO {
 	SessionFactory sessionFactory=SessionConnector.HbmConnect();
+	
 	@Override
 	public void save(Student student) {
 		Session session=sessionFactory.openSession();
@@ -27,8 +28,6 @@ public class StudentDAOImpl implements StudentDAO {
 		}catch(Exception exp) {
 			System.out.println("ERROR:SAVING STUDENT "+exp);
 		}
-		
-
 	}
 
 	@Override
@@ -55,8 +54,6 @@ public class StudentDAOImpl implements StudentDAO {
 			session.update(student);
 			session.getTransaction().commit();
 			System.out.println("Student UPDATED");
-			
-			
 		}catch(Exception exp) {
 			System.out.println("ERROR:UPDATING STUDENT "+exp);
 	}
@@ -89,9 +86,7 @@ public class StudentDAOImpl implements StudentDAO {
 			Query query=session.createNamedQuery("FROM Student");
 			allStudent=query.getResultList();
 			session.getTransaction().commit();
-			System.out.println("Student LISTED");
-			
-			
+			System.out.println("Student LISTED");	
 		}catch(Exception exp) {
 			System.out.println("ERROR:LISTING STUDENT "+exp);
 		}

@@ -8,94 +8,91 @@ import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import com.sms.DAO.AttendenceDAO;
-import com.sms.Model.Attendence;
-
+import com.sms.DAO.SClassDAO;
+import com.sms.Model.SClass;
 import com.sms.dbutils.SessionConnector;
 
-public class AttendenceDAOImpl implements AttendenceDAO {
+public class SClassDAOImpl implements SClassDAO {
 	SessionFactory sessionFactory = SessionConnector.HbmConnect();
 	Session session;
-
+	
 	@Override
-	public void save(Attendence attendence) {
+	public void save(SClass class1) {
 		session = sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			session.save(attendence);
+			session.save(class1);
 			session.getTransaction().commit();
-			System.out.println("Attendence Saved SucessFully");
 		}catch(Exception e) {
-			System.out.println("Error : Saving Attendence :"+e);
+			System.out.println("Error : Saving class :"+e);
 			session.getTransaction().rollback();
 		}
 		session.clear();
 	}
-
+	
 	@Override
-	public void delete(Attendence attendence) {
+	public void update(SClass class1) {
 		session = sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			session.delete(attendence);
+			session.update(class1);
 			session.getTransaction().commit();
-			System.out.println("Attendence Deleted Successfully");
+			System.out.println("Class Updated Successfully");
 		}catch(Exception e) {
-			System.out.println("Error : Deleting Attendence : "+e);
+			System.out.println("Error : Updating class :"+e);
 			session.getTransaction().rollback();
 		}
 		session.clear();
 	}
-
+	
 	@Override
-	public void update(Attendence attendence) {
+	public void delete(SClass class1) {
 		session = sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			session.update(attendence);
+			session.delete(class1);
 			session.getTransaction().commit();
-			System.out.println("Attendence Updates Successfully");
+			System.out.println("Class Deletion Successfully");
 		}catch(Exception e) {
-			System.out.println("Error : Updating Attendence : "  +e);
+			System.out.println("Error : Deleting class :"+e);
 			session.getTransaction().rollback();
 		}
 		session.clear();
 	}
-
+	
 	@Override
-	public Attendence get(int id) {
-		Attendence attendence = new Attendence();
+	public SClass get(int id) {
+		SClass sclass = new SClass();
 		session = sessionFactory.openSession();
-
 		try {
 			session.beginTransaction();
-			attendence = session.get(Attendence.class,id);
+			sclass = session.get(SClass.class,id);
 			session.getTransaction().commit();
-			System.out.println("Getting Attendence Id Sucessfully");
+			System.out.println("Getting Class Id Successful");
 		}catch(Exception e) {
-			System.out.println("Error : Getting Attendence ID  :"+e);
+			System.out.println("Error : getting Class Id : "+e);
 			session.getTransaction().rollback();
 		}
 		session.clear();
-		return attendence;
+		return sclass;
 	}
-
+	
 	@Override
-	public List<Attendence> list() {
-		List<Attendence> allAttendence = new ArrayList<>(); 
+	public List<SClass> list() {
+		List<SClass> sClass = new ArrayList<>();
 		session = sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			Query query = session.createQuery("Select * from tbl_attendence");
-			allAttendence = query.getResultList();
+			Query query = session.createQuery("Select * from tbl_class");
+			sClass = query.getResultList();
 			session.getTransaction().commit();
-			System.out.println("Getting Attendence List Succesfully");
+			System.out.println("Getting Class List Successful");
 		}catch(Exception e) {
-			System.out.println("Error : getting Attendence : "+e);
+			System.out.println("Error : getting Class List : "+e);
 			session.getTransaction().rollback();
 		}
 		session.clear();
-		return allAttendence;
+		return sClass;
 	}
 
 }

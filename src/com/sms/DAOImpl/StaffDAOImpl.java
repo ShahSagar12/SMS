@@ -14,10 +14,11 @@ import com.sms.dbutils.SessionConnector;
 
 public class StaffDAOImpl implements StaffDAO {
 	SessionFactory sessionFactory=SessionConnector.HbmConnect();
+	Session session;
 
 	@Override
 	public void save(Staff staff) {
-		Session session=sessionFactory.openSession();
+		session=sessionFactory.openSession();
 			try {
 				session.beginTransaction();
 				session.save(staff);
@@ -32,7 +33,7 @@ public class StaffDAOImpl implements StaffDAO {
 
 	@Override
 	public void delete(Staff staff) {
-		Session session=sessionFactory.openSession();
+		session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
 			session.delete(staff);
@@ -46,7 +47,7 @@ public class StaffDAOImpl implements StaffDAO {
 
 	@Override
 	public void update(Staff staff) {
-		Session session=sessionFactory.openSession();
+		session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
 			session.update(staff);
@@ -61,7 +62,7 @@ public class StaffDAOImpl implements StaffDAO {
 	@Override
 	public Staff get(int id) {
 		Staff staff=new Staff();
-		Session session=sessionFactory.openSession();
+		session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
 			staff=session.get(staff.getClass(), id);
@@ -77,7 +78,7 @@ public class StaffDAOImpl implements StaffDAO {
 	public List<Staff> list() {
 		
 		List<Staff> allStaff=new ArrayList<>();
-		Session session=sessionFactory.openSession();
+		session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
 			Query query=session.createQuery("FROM Staff");
