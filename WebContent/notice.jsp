@@ -62,8 +62,7 @@
       </tr>
 
 </table>
-</div>
-</div>
+
 
 	<!--end-main-container-part-->
 

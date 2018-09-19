@@ -15,7 +15,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Apache"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Spring Boot"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

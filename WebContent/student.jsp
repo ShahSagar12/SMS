@@ -57,7 +57,7 @@
         <td>
           <a href="#" class="btn btn-primary"><span class="icon-edit"></span> Edit</a> 
           <a href="#"  class="btn btn-danger"><span class="icon-trash"></span> Delete</a>
-            <a href="#"  class="btn btn-success"><span class="icon-user"></span> View Information</a>
+          <a href="#"  class="btn btn-success"><span class="icon-user"></span> View Information</a>
             
         </td>
       </tr>

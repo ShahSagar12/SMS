@@ -17,6 +17,7 @@
 			</ul></li>
 		<li class="submenu"><a href="#"><i class="icon-user"></i> <span>Staff</span></a>
 			<ul>
+				<li><a href="EmployeeAccount.jsp">Employee Account</a></li>
 				<li><a href="employee.jsp">Employee</a></li>
 				<li><a href="teacher.jsp">Teacher</a></li>
 
@@ -25,6 +26,7 @@
 		<li class="submenu"><a href="#"><i class="icon-user-md"></i>
 				<span>Student</span></a>
 			<ul>
+				<li><a href="StudentAccount.jsp">Student Account</a>
 				<li><a href="student.jsp">Student List</a></li>
 				<li><a href="addstudent.jsp">Add New</a></li>
 			</ul></li>
@@ -45,11 +47,11 @@
 		<li class="submenu"><a href="#"><i class="icon-bolt"></i> <span>Exams</span>
 				<span class="label label-important">4</span></a>
 			<ul>
-			<li><a href="viewmarks.jsp">View Marks</a></li>
-			<li><a href="addmarks.jsp">ADD Marks</a></li>
+				<li><a href="viewmarks.jsp">View Marks</a></li>
+				<li><a href="addmarks.jsp">ADD Marks</a></li>
 				<li><a href="onlineexam.html">Online Exam</a></li>
 				<li><a href="offlineexam.html">Offline Exam</a></li>
-				
+
 				<li><a href="seatplanning.html">Seat planning</a></li>
 
 			</ul></li>
@@ -65,7 +67,8 @@
 				<li><a href="issueinvetory.jsp">Issue</a></li>
 				<li><a href="invetorystock.jsp">Stock</a></li>
 			</ul></li>
-		<li><a href="performance.jsp"><i class="icon-dashboard"></i> <span>Performance</span></a></li>
+		<li><a href="performance.jsp"><i class="icon-dashboard"></i>
+				<span>Performance</span></a></li>
 		<li><a href="#"><i class="icon-money"></i> <span>Payroll</span></a></li>
 		<li class="submenu"><a href="#"><i class="icon-truck"></i> <span>Vechicle</span></a>
 			<ul>
