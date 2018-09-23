@@ -14,4 +14,6 @@ public interface UserService {
 	public User get(int id);
 	public List<User> list();
 
+	public int checkAuthenticate(User user);
+	public String getUserName(int id);
 }

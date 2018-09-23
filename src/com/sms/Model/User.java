@@ -14,33 +14,37 @@ public class User {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="User_Id")
 	private int id;
-	@Column(name="User")
-	private String user; 
+	@Column(name="User_Name")
+	private String userName; 
+	
 	@Column(name="User_Password")
-	private String password;
+	private String userPassword;
 	@Column(name="status")
 	private int status;	
 	
 	public User() {
 		
 	}
+	
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getAdmin() {
-		return user;
+	
+	public String getUserPassword() {
+		return userPassword;
 	}
-	public void setAdmin(String user) {
-		this.user = user;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 	public int getStatus() {
 		return status;
@@ -48,22 +52,25 @@ public class User {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	public User(int id, String user, String password, int status) {
+	public User(int id, String userName, String userPassword, int status) {
 		super();
 		this.id = id;
-		this.user = user;
-		this.password = password;
+		this.userName = userName;
+		this.userPassword = userPassword;
 		this.status = status;
 	}
 	public User(String user, String password, int status) {
 		super();
-		this.user = user;
-		this.password = password;
+		this.userName = userName;
+		this.userPassword = userPassword;
 		this.status = status;
 	}
+
 	@Override
 	public String toString() {
-		return "Admin [id=" + id + ", user=" + user + ", password=" + password + ", status=" + status + "]";
-	}	
+		return "User [id=" + id + ", userName=" + userName + ", userPassword=" + userPassword + ", status=" + status + "]";
+	}
+	
+	
 
 }

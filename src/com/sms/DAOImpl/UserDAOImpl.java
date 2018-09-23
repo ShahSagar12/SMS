@@ -1,5 +1,7 @@
 package com.sms.DAOImpl;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -95,5 +97,50 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return userList;
 	}
+
+	@Override
+	public int checkAuthenticate(User user) {
+		int register=0;
+		session=sessionFactory.openSession();
+		try {
+			session.beginTransaction();
+			PreparedStatement ps=(PreparedStatement) session.createNamedQuery("Select id from User where User_name=? and Password=? and status='1'");
+			ps.setString(1, user.getUserName());
+			ps.setString(2, user.getUserPassword());
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()) {
+				register=rs.getInt("id");
+			}
+			session.getTransaction().commit();
+			
+			
+		}catch(Exception exp) {
+		System.out.println("ERROR:Authentication "+exp);	
+		}
+		return register;
+	}
+
+	@Override
+	public String getUserName(int id) {
+		String userName="";
+		session=sessionFactory.openSession();
+		try {
+			session.beginTransaction();
+			PreparedStatement ps=(PreparedStatement) session.createNamedQuery("Select userName from User where id=?");
+			ps.setInt(1, id);
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()) {
+				userName=rs.getString("userName");
+			}
+			session.getTransaction().commit();
+			
+			
+		}catch(Exception exp) {
+		System.out.println("ERROR:Authentication "+exp);	
+		}
+		return userName;
+	}
+	
+	
 
 }
