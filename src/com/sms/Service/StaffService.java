@@ -6,7 +6,7 @@ import com.sms.Model.Staff;
 
 public interface StaffService {
 	
-	public void save(Staff staff);
+	public int save(Staff staff);
 	public void delete(Staff staff);
 	public void update(Staff staff);
 	

@@ -11,9 +11,9 @@ public class StaffServiceImpl implements StaffService{
 	StaffDAO staffDAO=new StaffDAOImpl();
 
 	@Override
-	public void save(Staff staff) {
+	public int save(Staff staff) {
 		
-		staffDAO.save(staff);
+		 return staffDAO.save(staff);
 		
 	}
 

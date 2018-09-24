@@ -1,5 +1,6 @@
 package com.sms.DAOImpl;
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -19,18 +20,19 @@ public class UserDAOImpl implements UserDAO {
 	Session session;
 
 	@Override
-	public void save(User user) {
+	public int save(User user) {
+		int register=0;
 		session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			session.save(user);
+			register=(int) session.save(user);
 			session.getTransaction().commit();
 			System.out.println("Save Successful");
 		}catch(Exception exp){
 			session.getTransaction().rollback();
 			System.out.println("ERROR:SAVING USER :"+exp);
 		}
-		
+		return register;
 
 	}
 

@@ -17,18 +17,19 @@ public class StaffDAOImpl implements StaffDAO {
 	Session session;
 
 	@Override
-	public void save(Staff staff) {
+	public int save(Staff staff) {
+		int register=0;
 		session=sessionFactory.openSession();
 			try {
 				session.beginTransaction();
-				session.save(staff);
+				register=(int) session.save(staff);
 				session.getTransaction().commit();
 				System.out.println("staff saved");				
 			}catch(Exception exp) {
 				session.getTransaction().rollback();
 				System.out.println("ERROR:SAVING STAFF"+exp);					
 			}
-
+			return register;
 	}
 
 	@Override

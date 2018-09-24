@@ -16,11 +16,12 @@ public class StudentDAOImpl implements StudentDAO {
 	SessionFactory sessionFactory=SessionConnector.HbmConnect();
 	
 	@Override
-	public void save(Student student) {
+	public int save(Student student) {
+		int register=0;
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			session.save(student);
+			register=(int) session.save(student);
 			session.getTransaction().commit();
 			System.out.println("Student SAVED");
 			
@@ -28,6 +29,7 @@ public class StudentDAOImpl implements StudentDAO {
 		}catch(Exception exp) {
 			System.out.println("ERROR:SAVING STUDENT "+exp);
 		}
+		return register;
 	}
 
 	@Override
