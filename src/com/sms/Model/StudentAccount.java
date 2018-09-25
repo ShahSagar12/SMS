@@ -20,9 +20,7 @@ public class StudentAccount {
 	@Column(name = "student_Account_Number")
 	private String StudentAccNo;
 	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="S_Name")
-	private Student studentName;
+	
 	
 	
 	@Column(name = "Total_Fee")
@@ -33,6 +31,10 @@ public class StudentAccount {
 	
 	@Column(name = "Due_Amount")
 	private int dueAmount;
+	
+	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@JoinColumn(name="S_Name")
+	private Student studentName;
 
 	public String getStudentAccNo() {
 		return StudentAccNo;

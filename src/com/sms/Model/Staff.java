@@ -29,18 +29,6 @@ public class Staff {
 	private String staffPost;	
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="V_Id")
-	private Vehicle vehicle;
-	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="LM_Id")
-	private Library library;
-	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="Att_Id")
-	private Attendence attendence;
-	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
 	@JoinColumn(name="Staff_Account_No")
 	private StaffAccount staffAccount;
 	
@@ -50,16 +38,13 @@ public class Staff {
 	public Staff() {
 		
 	}
-	public Staff(int staffId, String staffName, String staffAddress, String staffPost, int status, Vehicle vehicle, Library library,Attendence attendence,StaffAccount staffAccount) {
+	public Staff(int staffId, String staffName, String staffAddress, String staffPost, int status,StaffAccount staffAccount) {
 		super();
 		this.staffId = staffId;
 		this.staffName = staffName;
 		this.staffAddress = staffAddress;
 		this.staffPost = staffPost;
 		this.status = status;
-		this.vehicle=vehicle;
-		this.library=library;
-		this.attendence=attendence;
 		this.staffAccount=staffAccount;
 	}
 
@@ -69,25 +54,7 @@ public class Staff {
 	public void setStaffAccount(StaffAccount staffAccount) {
 		this.staffAccount = staffAccount;
 	}
-	public Library getLibrary() {
-		return library;
-	}
-
-	public void setLibrary(Library library) {
-		this.library = library;
-	}
-
-	public Attendence getAttendence() {
-		return attendence;
-	}
-
-	public void setAttendence(Attendence attendence) {
-		this.attendence = attendence;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+	
 
 	
 
@@ -131,18 +98,11 @@ public class Staff {
 		this.status = status;
 	}
 	
-	public Vehicle getVehicle() {
-		return vehicle;
-	}
-
-	public void setTeacher(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
+	
 	@Override
 	public String toString() {
 		return "Staff [staffId=" + staffId + ", staffName=" + staffName + ", staffAddress=" + staffAddress + ", staffPost="
-				+ staffPost + ", vehicle=" + vehicle + ", library=" + library + ", attendence=" + attendence
-				+ ", staffAccount=" + staffAccount + ", status=" + status + "]";
+				+ staffPost + ", staffAccount=" + staffAccount + ", status=" + status + "]";
 	}
 
 		

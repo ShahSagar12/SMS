@@ -15,8 +15,7 @@
 		<property name="hbm2ddl.auto">create</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 
-		<mapping class="com.sms.Model.Attendence" />
-		<mapping class="com.sms.Model.Library" />
+		
 		<mapping class="com.sms.Model.SClass" />
 		<mapping class="com.sms.Model.Staff" />
 		<mapping class="com.sms.Model.StaffAccount" />
@@ -24,8 +23,7 @@
 		<mapping class="com.sms.Model.StudentAccount" />
 		<mapping class="com.sms.Model.Subject" />
 		<mapping class="com.sms.Model.Teacher" />
-		<mapping class="com.sms.Model.TimeTable" />
-		<mapping class="com.sms.Model.Vehicle" />
+		
 		
 	</session-factory>
 </hibernate-configuration>
