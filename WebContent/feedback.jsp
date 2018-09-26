@@ -16,7 +16,7 @@
 <link href='css/googleapi.css' rel='stylesheet' type='text/css'>
 <jsp:include page="header.jsp" />
 <jsp:include page="sidebar.jsp" />
-<jsp:include page="subheader.jsp"/>
+
 </head>
 <body>
 	

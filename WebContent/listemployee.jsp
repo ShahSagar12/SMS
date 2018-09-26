@@ -16,42 +16,66 @@
 <link href='css/googleapi.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp" />
 	<jsp:include page="sidebar.jsp" />
-	<div class="container">
-		<h2>Student Attendance</h2>
-	</div>
+
 	<div id="content">
 		<div id="content-header">
 			<div id="breadcrumb">
-				<a href="liststudent.jsp" title="Go to Student List"
-					class="tip-bottom"><i class="icon-home"></i> Student List</a>
+				<a href="index.html" title="Go to Home" class="tip-bottom"><i
+					class="icon-home"></i> Home</a>
 			</div>
 		</div>
-		<hr>
 
 		<div class="container-fluid">
-			<table class="table table-responsive" border=1>
+			<hr />
+			<h3>Employee List</h3>
+			<form class="navbar-form navbar-right" role="search">
+
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+					<button type="submit" class="btn-success">
+						GO<span class="icon-search"></span>
+					</button>
+				</div>
+				<a href="addemployee.jsp" class="btn btn-success pull-right">Add
+					Student</a>
+			</form>
+			<br>
+			<table class="table table-hover" border=1>
 				<thead>
 					<tr>
-						<th><b>ID</b></th>
-						<th><b>First Name</b></th>
-						<th><b>Last Name</b></th>
-						<th><b>Total Working Days</b></th>
-						<th><b>Total present days</b></th>
+						<td>Std_id</td>
+						<td>First Name</td>
+						<td>Last Name</td>
+						<td>Faculty</td>
+						<td>Course</td>
+						<td>Semester</td>
+						<td>Mobile Number</td>
+						<td>Action</td>
 					</tr>
 				</thead>
 				<tr>
 					<td>1.</td>
 					<td>Sudeep</td>
 					<td>Paudel</td>
-					<td>30</td>
-					<td>25</td>
+					<td>IT</td>
+					<td>Bsc Csit</td>
+					<td>5th</td>
+					<td>9847495109</td>
+					<td><a href="#" class="btn btn-primary"><span
+							class="icon-edit"></span> Edit</a> <a href="#" class="btn btn-danger"><span
+							class="icon-trash"></span> Delete</a> <a href="#"
+						class="btn btn-success"><span class="icon-user"></span> View
+							Information</a></td>
 				</tr>
 
 			</table>
+
 		</div>
+
 	</div>
+
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

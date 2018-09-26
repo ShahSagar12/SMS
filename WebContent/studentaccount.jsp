@@ -1,3 +1,7 @@
+
+<%@page import="com.sms.ServiceImpl.StudentServiceImpl"%>
+<%@page import="com.sms.Service.StudentService"%>
+<%@page import="com.sms.DAOImpl.StudentDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,12 +14,12 @@
 <link rel="stylesheet" href="assets/css/fullcalendar.css" />
 <link rel="stylesheet" href="assets/css/matrix-style.css" />
 <link rel="stylesheet" href="assets/css/matrix-media.css" />
-<link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/fontawesome/css/all.css" />
 <link rel="stylesheet" href="assets/css/jquery.gritter.css" />
-
-<jsp:include page="sidebar.jsp" />
 </head>
 <body>
+	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="sidebar.jsp"></jsp:include>
 	<div id="content">
 		<div id="content-header">
 			<div id="breadcrumb">
@@ -23,8 +27,11 @@
 					class="icon-home"></i> Home</a>
 			</div>
 		</div>
+
 		<div class="container-fluid">
-			<form action="StudentAccountPrint.jsp" method="get">
+			<jsp:include page="quickactions.jsp"></jsp:include>
+			<hr>
+			<form action="studentaccountprint.jsp" method="get">
 				<div class="container">
 					<h3>Student Account</h3>
 					<label>Student ID : </label><input name="studentId" type="text"
