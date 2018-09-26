@@ -10,9 +10,9 @@ import com.sms.Service.TeacherService;
 public class TeacherServiceImpl implements TeacherService{
 	TeacherDAO teacherDAO=new TeacherDAOImpl();
 	@Override
-	public void save(Teacher teacher) {
+	public int save(Teacher teacher) {
 		
-		teacherDAO.save(teacher);
+		return teacherDAO.save(teacher);
 		
 	}
 

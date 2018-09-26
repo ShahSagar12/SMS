@@ -16,11 +16,12 @@ public class TeacherDAOImpl implements TeacherDAO {
 	SessionFactory sessionFactory=SessionConnector.HbmConnect();
 
 	@Override
-	public void save(Teacher teacher) {
+	public int save(Teacher teacher) {
+		int register=0;
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			session.save(teacher);
+			register=(int) session.save(teacher);
 			session.getTransaction().commit();
 			System.out.println("Teacher SAVED");
 			
@@ -28,6 +29,7 @@ public class TeacherDAOImpl implements TeacherDAO {
 		}catch(Exception exp) {
 			System.out.println("ERROR:SAVING Teacher "+exp);
 		}
+		return register;
 	}
 
 	@Override
