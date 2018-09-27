@@ -8,13 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-
-
-
 
 @Entity
 @Table(name="tbl_Student")
@@ -46,11 +41,9 @@ public class Student {
 	@JoinColumn(name="S_Id")
 	private StudentAccount studentAccount;
 
-
 	public Student() {
 
 	}
-
 
 	public int getStudentId() {
 		return studentId;
@@ -95,7 +88,6 @@ public class Student {
 		this.status = status;
 	}
 
-
 	public StudentAccount getStudentAccount() {
 		return studentAccount;
 	}
@@ -103,7 +95,6 @@ public class Student {
 	public void setStudentAccount(StudentAccount studentAccount) {
 		this.studentAccount = studentAccount;
 	}
-
 
 	public Student(int studentId, String studentName, String studentAddress, String studentPhoneNo, String fatherName,
 			String motherName, int status, StudentAccount studentAccount) {
@@ -116,8 +107,6 @@ public class Student {
 		this.motherName = motherName;
 		this.status = status;
 		this.studentAccount = studentAccount;
-		
-
 	}
 
 
@@ -131,8 +120,6 @@ public class Student {
 		this.motherName = motherName;
 		this.status = status;
 		this.studentAccount = studentAccount;
-
-
 	}
 
 
@@ -142,8 +129,5 @@ public class Student {
 				+ ", studentPhoneNo=" + studentPhoneNo + ", fatherName=" + fatherName + ", motherName=" + motherName
 				+ ", status=" + status + ", studentAccount=" + studentAccount + "]";
 	}
-
-
-
 
 }
