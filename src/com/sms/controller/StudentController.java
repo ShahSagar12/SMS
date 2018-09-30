@@ -7,42 +7,51 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
 
 import com.sms.Model.Student;
-import com.sms.Model.StudentAccount;
 
-/**
- * Servlet implementation class StudentController
- */
-@WebServlet("/Student")
+import com.sms.Service.StudentService;
+import com.sms.ServiceImpl.StudentServiceImpl;
+
+
+
+@WebServlet("/register")
 public class StudentController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public StudentController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	
+    
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.sendRedirect("addStudent.Jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Student student=new Student();
-		student.setStudentName(request.getParameter(""));
-		student.setFatherName(request.getParameter(""));
-		student.setMotherName(request.getParameter(""));
-		student.setStudentAddress(request.getParameter(""));
-		student.setStudentPhoneNo(request.getParameter(""));
-		StudentAccount studentAccount=new StudentAccount();
-		studentAccount.setFeePayment(Integer.parseInt(request.getParameter("")));
+		
+		String id=request.getParameter("studentid");
+		int ida=Integer.parseInt(id);
+		
+		student.setStudentId(ida);
+		
+		student.setStudentName(request.getParameter("studentname"));
+		student.setFatherName(request.getParameter("fathername"));
+		student.setMotherName(request.getParameter("mothername"));
+		student.setStudentAddress(request.getParameter("studentaddress"));
+		student.setStudentPhoneNo(request.getParameter("studentphone"));
+		student.setStatus(1);
+		StudentService studentService=new StudentServiceImpl();
+		int save=studentService.save(student);
+		
+		
+		if(save>0) {
+			response.sendRedirect("SaveSuccessFull.jsp");
+		}else {
+			response.sendRedirect("ERROR.jsp?403");
+		}
+		
 		
 	}
 
