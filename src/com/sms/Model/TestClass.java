@@ -2,19 +2,33 @@ package com.sms.Model;
 
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.sms.Service.StudentService;
+import com.sms.ServiceImpl.StudentServiceImpl;
+
 
 
 
 public class TestClass {
 
 	public static void main(String[] args) throws ParseException {
-		String pattern = "yyyy-MM-dd";
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-
-		String date = simpleDateFormat.format(new Date());
-		System.out.println(date);
+		Student student=new Student();
+		student.setStudentId(12);
+		student.setStudentName("sagar");
+		student.setFatherName("KB");
+		student.setMotherName("jds");
+		
+	
+		student.setStudentPhoneNo("975498765");
+		student.setStatus(1);
+		StudentService studentService=new StudentServiceImpl();
+		studentService.save(student);
+		
+		
+	
 
 		
 

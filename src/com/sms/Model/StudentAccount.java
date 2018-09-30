@@ -1,5 +1,6 @@
 package com.sms.Model;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,8 +34,10 @@ public class StudentAccount {
 	private int dueAmount;
 	
 	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="S_Name")
-	private Student studentName;
+	@JoinColumn(name="Student_Id")
+	private Student student;
+	
+	
 
 	public String getStudentAccNo() {
 		return StudentAccNo;
@@ -44,13 +47,7 @@ public class StudentAccount {
 		StudentAccNo = studentAccNo;
 	}
 
-	public Student getStudentName() {
-		return studentName;
-	}
-
-	public void setStudentName(Student studentName) {
-		this.studentName = studentName;
-	}
+	
 
 	public int getTotalFee() {
 		return totalFee;
@@ -75,25 +72,30 @@ public class StudentAccount {
 	public void setDueAmount(int dueAmount) {
 		this.dueAmount = dueAmount;
 	}
+	
 
-	public StudentAccount(String studentAccNo, Student studentName, int totalFee, int feePayment, int dueAmount) {
+	
+
+	
+
+	public StudentAccount(String studentAccNo, int totalFee, int feePayment, int dueAmount) {
 		super();
 		StudentAccNo = studentAccNo;
-		this.studentName = studentName;
 		this.totalFee = totalFee;
 		this.feePayment = feePayment;
 		this.dueAmount = dueAmount;
 	}
 
-	@Override
-	public String toString() {
-		return "StudentAccount [StudentAccNo=" + StudentAccNo + ", studentName=" + studentName + ", totalFee="
-				+ totalFee + ", feePayment=" + feePayment + ", dueAmount=" + dueAmount + "]";
-	}
-
 	public StudentAccount() {
 		
 	}
+
+	@Override
+	public String toString() {
+		return "StudentAccount [StudentAccNo=" + StudentAccNo + ", totalFee=" + totalFee + ", feePayment=" + feePayment
+				+ ", dueAmount=" + dueAmount + "]";
+	}
+	
 	
 	
 	

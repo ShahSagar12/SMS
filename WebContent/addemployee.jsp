@@ -23,9 +23,8 @@
 		</div>
 		<hr>
 		<div class="container-fluid">
-			<form action="listemployee.jsp">
-				<label><b>Employee Id</b></label>
-				<input name="employeeid" type="text" class="form-control" placeholder="EmployeeId" required/>
+			<form action="addStaff">
+				
 				<label><b>Employee Name</b></label>
 				<input name="employeename" type="text" placeholder="Enter your employee name here"/>
 				<label><b>Employee Address</b></label>
