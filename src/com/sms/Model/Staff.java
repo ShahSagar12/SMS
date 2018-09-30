@@ -1,14 +1,11 @@
 package com.sms.Model;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,39 +22,32 @@ public class Staff {
 	@Column(name="Staff_Address")
 	private String staffAddress;
 	
-	@Column(name="Staff_Post")
-	private String staffPost;	
+	@Column(name="Staff_EmailAddress")
+	private String staffEmailAddress;
 	
-	@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
-	@JoinColumn(name="Staff_Account_No")
-	private StaffAccount staffAccount;
+	@Column(name="Staff_Post")
+	private String staffPost;		
 	
 	@Column(name="Staff_Status")
 	private int status;
 	
+	@Column(name="Staff_Phone")
+	private String staffPhone;
+	
 	public Staff() {
 		
 	}
-	public Staff(int staffId, String staffName, String staffAddress, String staffPost, int status,StaffAccount staffAccount) {
+	public Staff(int staffId, String staffName, String staffAddress,String staffEmailAddress, String staffPost, String staffPhone, int status) {
 		super();
 		this.staffId = staffId;
 		this.staffName = staffName;
 		this.staffAddress = staffAddress;
 		this.staffPost = staffPost;
+		this.staffEmailAddress=staffEmailAddress;
+		this.staffPhone=staffPhone;
 		this.status = status;
-		this.staffAccount=staffAccount;
+		
 	}
-
-	public StaffAccount getStaffAccount() {
-		return staffAccount;
-	}
-	public void setStaffAccount(StaffAccount staffAccount) {
-		this.staffAccount = staffAccount;
-	}
-	
-
-	
-
 	public int getStaffId() {
 		return staffId;
 	}
@@ -97,15 +87,26 @@ public class Staff {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+		
+	public String getStaffPhone() {
+		return staffPhone;
+	}
+	public void setStaffPhone(String staffPhone) {
+		this.staffPhone = staffPhone;
+	}
 	
-	
+	public String getStaffEmailAddress() {
+		return staffEmailAddress;
+	}
+	public void setStaffEmailAddress(String staffEmailAddress) {
+		this.staffEmailAddress = staffEmailAddress;
+	}
 	@Override
 	public String toString() {
-		return "Staff [staffId=" + staffId + ", staffName=" + staffName + ", staffAddress=" + staffAddress + ", staffPost="
-				+ staffPost + ", staffAccount=" + staffAccount + ", status=" + status + "]";
+		return "Staff [staffId=" + staffId + ", staffName=" + staffName + ", staffAddress=" + staffAddress
+				+ ", staffEmailAddress=" + staffEmailAddress + ", staffPost=" + staffPost + ", status=" + status
+				+ ", staffPhone=" + staffPhone + "]";
 	}
-
-		
 	
-
+	
 }

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sms.Model.Staff;
-import com.sms.Model.StaffAccount;
 import com.sms.Service.StaffService;
 import com.sms.ServiceImpl.StaffServiceImpl;
 
@@ -37,14 +36,15 @@ public class StaffController extends HttpServlet {
 		StaffService staffService=new StaffServiceImpl();
 		staff.setStaffName(request.getParameter("staffName"));
 		staff.setStaffAddress(request.getParameter("staffAddress"));
+		staff.setStaffEmailAddress(request.getParameter("staffEmailAddress"));
 		staff.setStaffPost(request.getParameter("staffPost"));
-		StaffAccount staffAccount=new StaffAccount();
-		staffAccount.setStaff_Salary(request.getParameter(""));
+		staff.setStaffPhone(request.getParameter("staffPhone"));
+		staff.setStatus(1);
 		int i=staffService.save(staff);
 		if(i>0) {
-			response.sendRedirect("studentList.jsp");
+			response.sendRedirect("SaveSuccessfull.jsp");
 		}else {
-			response.sendRedirect("addStaff.jsp");
+			response.sendRedirect("addemployee.jsp");
 		}
 		
 		

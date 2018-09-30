@@ -23,14 +23,18 @@
 		</div>
 		<hr>
 		<div class="container-fluid">
-			<form action="addStaff">
+			<form action="addStaff" method="post">
 				
 				<label><b>Employee Name</b></label>
-				<input name="employeename" type="text" placeholder="Enter your employee name here"/>
-				<label><b>Employee Address</b></label>
-				<input name="empolyeeaddress" type="text" placeholder="Enter your employee address" />
+				<input name="staffName" type="text" placeholder="Enter your employee name here"/>
+				<label><b>Address</b></label>
+				<input name="staffAddress" type="text" placeholder="Enter your employee address" />
+				<label><b>Email Address</b></label>
+				<input name="staffEmail" type="text" placeholder="Enter your employee address" />
 				<label><b>Phone No.</b></label> 
-				<input name="employeephoneno" type="text" placeholder="Enter your employee phone number" />
+				<input name="staffPhone" type="text" placeholder="Enter your employee phone number" />
+				<label><b>Post</b></label> 
+				<input name="staffPost" type="text" placeholder="Enter your employee post" />
 				<br>
 				<button class="btn btn-primary" type="submit">Submit</button>
 			</form>

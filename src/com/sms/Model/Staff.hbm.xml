@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 30, 2018 10:23:12 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.sms.Model.Staff" table="STAFF">
+        <id name="staffId" type="int">
+            <column name="STAFFID" />
+            <generator class="increment" />
+        </id>
+        <property name="staffName" type="java.lang.String">
+            <column name="STAFFNAME" />
+        </property>
+        <property name="staffAddress" type="java.lang.String">
+            <column name="STAFFADDRESS" />
+        </property>
+        <property name="staffEmailAddress" type="java.lang.String">
+            <column name="STAFFEMAILADDRESS" />
+        </property>
+        <property name="staffPhone" type="java.lang.String">
+            <column name="STAFFPHONE" />
+        </property>
+        <property name="staffPost" type="java.lang.String">
+            <column name="STAFFPOST" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>
