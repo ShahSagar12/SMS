@@ -29,27 +29,21 @@ public class Role implements Serializable{
 	public int getRole_id() {
 		return Role_id;
 	}
-
 	public void setRole_id(int role_id) {
 		Role_id = role_id;
 	}
-
 	public String getRoleName() {
 		return roleName;
 	}
-
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
 	}
-
 	public List<User> getUserList() {
 		return userList;
 	}
-
 	public void setUserList(List<User> userList) {
 		this.userList = userList;
 	}
-
 	public Role(int role_id, String roleName, List<User> userList) {
 		super();
 		Role_id = role_id;
@@ -58,14 +52,11 @@ public class Role implements Serializable{
 	}
 
 	public Role() {
-		super();
-		
+		super();		
 	}
-
 	@Override
 	public String toString() {
 		return "Role [Role_id=" + Role_id + ", roleName=" + roleName + ", userList=" + userList + "]";
 	}
-	
 
 }

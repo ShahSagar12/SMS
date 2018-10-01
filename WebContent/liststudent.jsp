@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.sms.Model.Student" %>
+<%@ page import="com.sms.Model.Student" %>
+<%@ page import="com.sms.Service.StudentService" %>
+<%@ page import="com.sms.ServiceImpl.StudentServiceImpl" %>	
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +24,12 @@
 <body>
 	<jsp:include page="header.jsp" />
 	<jsp:include page="sidebar.jsp" />
+	<%	
+	StudentService studentService=new StudentServiceImpl();
+	List<Student> allStudent=studentService.list();
+	for(Student student:allStudent){
+	
+	%>
 
 	<div id="content">
 		<div id="content-header">
@@ -40,38 +53,40 @@
 				<a href="addstudent.jsp" class="btn btn-success pull-right">Add
 					Student</a>
 			</form>
+			</div>
+			<div class="container">
 			<br>
 			<table class="table table-hover" border=1>
 				<thead>
 					<tr>
 						<td>Std_id</td>
-						<td>First Name</td>
-						<td>Last Name</td>
-						<td>Faculty</td>
-						<td>Course</td>
-						<td>Semester</td>
-						<td>Mobile Number</td>
+						<td>Student Name</td>
+						<td>Father Name</td>
+						<td>Mother Name</td>
+						<td>Address</td>
+						<td>Phone Number</td>
 						<td>Action</td>
 					</tr>
 				</thead>
 				<tr>
-					<td>1.</td>
-					<td>Sudeep</td>
-					<td>Paudel</td>
-					<td>IT</td>
-					<td>Bsc Csit</td>
-					<td>5th</td>
-					<td>9847495109</td>
+					<td><%student.getStudentId(); %></td>
+					<td><%student.getStudentName(); %></td>
+					<td><%student.getFatherName(); %></td>
+					<td><%student.getMotherName(); %></td>
+					<td><%student.getStudentAddress();%></td>
+					<td><%student.getStudentPhoneNo();%></td>
+					
 					<td><a href="#" class="btn btn-primary"><span
 							class="icon-edit"></span> Edit</a> <a href="#" class="btn btn-danger"><span
 							class="icon-trash"></span> Delete</a> <a href="#"
 						class="btn btn-success"><span class="icon-user"></span> View
 							Information</a></td>
 				</tr>
-
+				<%} %>
 			</table>
 
 		</div>
+		
 
 	</div>
 

@@ -1,37 +1,26 @@
+
 package com.sms.Model;
 
-
-import java.text.ParseException;
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
+import java.util.List;
 
 import com.sms.Service.StudentService;
 import com.sms.ServiceImpl.StudentServiceImpl;
 
-
-
-
 public class TestClass {
 
-	public static void main(String[] args) throws ParseException {
-		Student student=new Student();
-		student.setStudentId(12);
-		student.setStudentName("sagar");
-		student.setFatherName("KB");
-		student.setMotherName("jds");
+	public static void main(String[] args) {
 		
-	
-		student.setStudentPhoneNo("975498765");
-		student.setStatus(1);
 		StudentService studentService=new StudentServiceImpl();
-		studentService.save(student);
-		
-		
-	
-
-		
-
+		List<Student> allStudent=studentService.list();
+		for(Student student:allStudent) {
+			System.out.println("Id"+student.getStudentId());
+			System.out.println(""+student.getStudentName());
+			System.out.println(""+student.getFatherName());
+			System.out.println(""+student.getMotherName());
+			System.out.println(""+student.getStudentAddress());
+			System.out.println(""+student.getStatus());
+			
+		}
 	}
 
 }

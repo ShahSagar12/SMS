@@ -79,17 +79,19 @@ public class StudentDAOImpl implements StudentDAO {
 		return student;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Student> list() {
-		List<Student> allStudent=new ArrayList();
+		List<Student> allStudent=new ArrayList<>();
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			Query query=session.createNamedQuery("FROM Student");
+			Query query=session.createQuery("from Student");
 			allStudent=query.getResultList();
 			session.getTransaction().commit();
 			System.out.println("Student LISTED");	
 		}catch(Exception exp) {
+			session.getTransaction().rollback();
 			System.out.println("ERROR:LISTING STUDENT "+exp);
 		}
 		

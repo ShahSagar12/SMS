@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 
 
@@ -32,10 +31,8 @@ public class StudentController extends HttpServlet {
 		Student student=new Student();
 		
 		String id=request.getParameter("studentid");
-		int ida=Integer.parseInt(id);
-		
-		student.setStudentId(ida);
-		
+		int ida=Integer.parseInt(id);		
+		student.setStudentId(ida);		
 		student.setStudentName(request.getParameter("studentname"));
 		student.setFatherName(request.getParameter("fathername"));
 		student.setMotherName(request.getParameter("mothername"));
@@ -43,16 +40,11 @@ public class StudentController extends HttpServlet {
 		student.setStudentPhoneNo(request.getParameter("studentphone"));
 		student.setStatus(1);
 		StudentService studentService=new StudentServiceImpl();
-		int save=studentService.save(student);
-		
-		
+		int save=studentService.save(student);		
 		if(save>0) {
 			response.sendRedirect("SaveSuccessFull.jsp");
 		}else {
 			response.sendRedirect("ERROR.jsp?403");
-		}
-		
-		
+		}		
 	}
-
 }

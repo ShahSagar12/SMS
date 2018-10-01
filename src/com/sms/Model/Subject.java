@@ -17,6 +17,8 @@ public class Subject {
 
 	@Column(name = "Subject_Name")
 	private String subName;
+	
+	
 
 	public Subject(int subId, String subName) {
 		super();

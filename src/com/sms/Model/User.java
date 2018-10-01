@@ -1,7 +1,5 @@
 package com.sms.Model;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import com.sun.javafx.collections.MappingChange.Map;
 
 @Entity
 @Table(name="tbl_User")

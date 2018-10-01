@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.sms.Model.Staff" %>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,30 +43,33 @@
 					</button>
 				</div>
 				<a href="addemployee.jsp" class="btn btn-success pull-right">Add
-					Student</a>
+					Staff</a>
 			</form>
+			<%	
+	List<Staff> allStaff=new ArrayList<>();
+	for(Staff staff:allStaff){
+	%>
+			
 			<br>
 			<table class="table table-hover" border=1>
 				<thead>
 					<tr>
-						<td>Std_id</td>
-						<td>First Name</td>
-						<td>Last Name</td>
-						<td>Faculty</td>
-						<td>Course</td>
-						<td>Semester</td>
-						<td>Mobile Number</td>
+						<td>Staff Id</td>
+						<td>Staff Name</td>
+						<td>Staff Post</td>
+						<td>Staff Address</td>
+						<td>Staff EmailAddress</td>
+						<td>Staff Phone</td>
 						<td>Action</td>
 					</tr>
 				</thead>
 				<tr>
-					<td>1.</td>
-					<td>Sudeep</td>
-					<td>Paudel</td>
-					<td>IT</td>
-					<td>Bsc Csit</td>
-					<td>5th</td>
-					<td>9847495109</td>
+					<td><%staff.getStaffId(); %></td>
+					<td><%staff.getStaffName(); %></td>
+					<td><%staff.getStaffPost(); %></td>
+					<td><%staff.getStaffAddress(); %></td>
+					<td><%staff.getStaffEmailAddress(); %></td>
+					<td><%staff.getStaffPhone(); %></td>
 					<td><a href="#" class="btn btn-primary"><span
 							class="icon-edit"></span> Edit</a> <a href="#" class="btn btn-danger"><span
 							class="icon-trash"></span> Delete</a> <a href="#"
@@ -75,6 +82,7 @@
 		</div>
 
 	</div>
+	<%} %>
 
 	<jsp:include page="footer.jsp" />
 </body>

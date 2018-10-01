@@ -36,98 +36,51 @@ public class Student {
 	@Column(name="S_Status")
 	private int status;
 
-	
-
 	public Student() {
 
 	}
-
-
-
 	public int getStudentId() {
 		return studentId;
 	}
-
-
-
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
 	}
-
-
-
 	public String getStudentName() {
 		return studentName;
 	}
-
-
-
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-
-
-
 	public String getStudentAddress() {
 		return studentAddress;
 	}
-
-
-
 	public void setStudentAddress(String studentAddress) {
 		this.studentAddress = studentAddress;
 	}
-
-
-
 	public String getStudentPhoneNo() {
 		return studentPhoneNo;
 	}
-
-
-
 	public void setStudentPhoneNo(String studentPhoneNo) {
 		this.studentPhoneNo = studentPhoneNo;
 	}
-
-
-
 	public String getFatherName() {
 		return fatherName;
 	}
-
-
-
 	public void setFatherName(String fatherName) {
 		this.fatherName = fatherName;
 	}
-
-
-
 	public String getMotherName() {
 		return motherName;
 	}
-
-
-
 	public void setMotherName(String motherName) {
 		this.motherName = motherName;
 	}
-
-
-
 	public int getStatus() {
 		return status;
 	}
-
-
-
 	public void setStatus(int status) {
 		this.status = status;
 	}
-
-
-
 	public Student(int studentId, String studentName, String studentAddress, String studentPhoneNo, String fatherName,
 			String motherName, int status) {
 		super();
@@ -139,15 +92,11 @@ public class Student {
 		this.motherName = motherName;
 		this.status = status;
 	}
-
-
-
 	@Override
 	public String toString() {
 		return "Student [studentId=" + studentId + ", studentName=" + studentName + ", studentAddress=" + studentAddress
 				+ ", studentPhoneNo=" + studentPhoneNo + ", fatherName=" + fatherName + ", motherName=" + motherName
 				+ ", status=" + status + "]";
 	}
-
 	
 }

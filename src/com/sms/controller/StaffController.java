@@ -36,7 +36,7 @@ public class StaffController extends HttpServlet {
 		StaffService staffService=new StaffServiceImpl();
 		staff.setStaffName(request.getParameter("staffName"));
 		staff.setStaffAddress(request.getParameter("staffAddress"));
-		staff.setStaffEmailAddress(request.getParameter("staffEmailAddress"));
+		staff.setStaffEmailAddress(request.getParameter("staffEmail"));
 		staff.setStaffPost(request.getParameter("staffPost"));
 		staff.setStaffPhone(request.getParameter("staffPhone"));
 		staff.setStatus(1);

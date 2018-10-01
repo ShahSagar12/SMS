@@ -16,21 +16,15 @@ import com.sms.ServiceImpl.TeacherServiceImpl;
 
 @WebServlet("/TeacherAccount")
 public class TeacherAccountController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+	private static final long serialVersionUID = 1L;       
     
     public TeacherAccountController() {
-        super();
-       
-    }
-
-	
+        super();       
+    }	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.sendRedirect("TeacherAccount.jsp");
-	}
-
-	
+	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Teacher teacher=new Teacher();
 		Staff staff=new Staff();

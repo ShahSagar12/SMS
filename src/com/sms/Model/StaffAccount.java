@@ -18,6 +18,13 @@ public class StaffAccount {
 	
 	@Column(name="Staff_Salary")
 	private String staff_Salary;
+	
+	@Column(name="StaffID")
+	private Staff staff;
+
+	public StaffAccount() {
+		
+	}
 
 	public String getStaff_AccNo() {
 		return Staff_AccNo;
@@ -35,23 +42,23 @@ public class StaffAccount {
 		this.staff_Salary = staff_Salary;
 	}
 
-	public StaffAccount(String staff_AccNo, String staff_Salary) {
-		super();
+	public Staff getStaff() {
+		return staff;
+	}
+
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+
+	public StaffAccount(String staff_AccNo, String staff_Salary, Staff staff) {
 		Staff_AccNo = staff_AccNo;
 		this.staff_Salary = staff_Salary;
+		this.staff = staff;
 	}
 
-	public StaffAccount() {
+	public StaffAccount(String staff_Salary, Staff staff) {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "StaffAccount [Staff_AccNo=" + Staff_AccNo + ", staff_Salary=" + staff_Salary + "]";
-	}
-	
-	
-	
-	
+		this.staff_Salary = staff_Salary;
+		this.staff = staff;
+	}	
 }

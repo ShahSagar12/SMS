@@ -16,8 +16,6 @@ import javax.persistence.Table;
 public class Teacher {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
-	
 	@Column(name="Teacher_Id")
 	private int teacherId;
 	

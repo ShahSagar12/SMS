@@ -3,28 +3,28 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Sep 29, 2018 6:10:51 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="com.sms.Model.Student" table="STUDENT">
+    <class name="com.sms.Model.Student" table="tbl_student">
         <id name="studentId" type="int">
-            <column name="STUDENTID" />
+            <column name="S_Id" />
             <generator class="assigned" />
         </id>
         <property name="studentName" type="java.lang.String">
-            <column name="STUDENTNAME" />
+            <column name="S_Name" />
         </property>
         <property name="studentAddress" type="java.lang.String">
-            <column name="STUDENTADDRESS" />
+            <column name="S_Address" />
         </property>
         <property name="studentPhoneNo" type="java.lang.String">
-            <column name="STUDENTPHONENO" />
+            <column name="S_Phone" />
         </property>
         <property name="fatherName" type="java.lang.String">
-            <column name="FATHERNAME" />
+            <column name="S_FatherName" />
         </property>
         <property name="motherName" type="java.lang.String">
-            <column name="MOTHERNAME" />
+            <column name="S_MotherName" />
         </property>
         <property name="status" type="int">
-            <column name="STATUS" />
+            <column name="S_Status" />
         </property>
     </class>
 </hibernate-mapping>
