@@ -32,35 +32,18 @@
 				<li><a href="program.jsp">Program</a></li>
 				<li><a href="subject.jsp">Subject</a></li>
 			</ul></li>
-		<li class="submenu"><a href="#"><i class="fas fa-book"></i> <span>Assignments</span>
-				<span class="label label-important">5</span></a>
-			<ul>
-				<li><a href="createassignment.jsp">Create Assignment</a></li>
-				<li><a href="findassignment.html">Find Assignment</a></li>
-			</ul></li>
+		
 		<li class="submenu"><a href="#"><i class="fas fa-book-reader"></i>
 				<span>Exam</span></a>
 			<ul>
 				<li><a href="viewmarks.jsp">View Marks</a></li>
 				<li><a href="addmarks.jsp">ADD Marks</a></li>
-				<li><a href="onlineexam.html">Online Exam</a></li>
-				<li><a href="offlineexam.html">Offline Exam</a></li>
-				<li><a href="seatplanning.html">Seat planning</a></li>
+				
 			</ul></li>
-		<li><a href="routine.jsp"><i class="far fa-calendar-alt"></i><span>Routine</span></a></li>
-		<li><a href="messages.jsp"><i class="fas fa-envelope"></i><span>Mail/SMS</span></a></li>
+		
 		<li><a href="events.jsp"><i class="fas fa-calendar"></i><span>Events</span></a></li>
-		<li class="submenu"><a href="#"><i class="fas fa-book"></i><span>Library</span></a>
-			<ul>
-				<li><a href="addbook.jsp">ADD Book</a></li>
-				<li><a href="issuebook.jsp">Issue Books</a></li>
-				<li><a href="findbook.jsp">Find Books</a></li>
-			</ul></li>
-		<li class="submenu"><a href="#"><i class="fas fa-bus-alt"></i><span>Vehicle</span></a>
-			<ul>
-				<li><a href="tracevehicle.jsp">Trace</a></li>
-				<li><a href="route.jsp">Route</a></li>
-			</ul></li>
+		
+		
 		<li class="content"><span>Yearly Fee Transactions</span>
 			<div
 				class="progress progress-mini progress-danger active progress-striped">

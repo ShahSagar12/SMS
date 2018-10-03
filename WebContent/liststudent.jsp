@@ -69,12 +69,12 @@
 					</tr>
 				</thead>
 				<tr>
-					<td><%student.getStudentId(); %></td>
-					<td><%student.getStudentName(); %></td>
-					<td><%student.getFatherName(); %></td>
-					<td><%student.getMotherName(); %></td>
-					<td><%student.getStudentAddress();%></td>
-					<td><%student.getStudentPhoneNo();%></td>
+					<td><%=student.getStudentId() %></td>
+					<td><%=student.getStudentName() %></td>
+					<td><%=student.getFatherName()%></td>
+					<td><%=student.getMotherName()%></td>
+					<td><%=student.getStudentAddress()%></td>
+					<td><%=student.getStudentPhoneNo()%></td>
 					
 					<td><a href="#" class="btn btn-primary"><span
 							class="icon-edit"></span> Edit</a> <a href="#" class="btn btn-danger"><span

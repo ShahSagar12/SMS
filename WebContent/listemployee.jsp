@@ -3,6 +3,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="com.sms.Model.Staff" %>
+<%@ page import="com.sms.Service.StaffService" %>
+<%@ page import="com.sms.ServiceImpl.StaffServiceImpl" %>	
 	
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +48,8 @@
 					Staff</a>
 			</form>
 			<%	
-	List<Staff> allStaff=new ArrayList<>();
+			StaffService staffService=new StaffServiceImpl();
+	List<Staff> allStaff=staffService.list();
 	for(Staff staff:allStaff){
 	%>
 			
@@ -64,12 +67,12 @@
 					</tr>
 				</thead>
 				<tr>
-					<td><%staff.getStaffId(); %></td>
-					<td><%staff.getStaffName(); %></td>
-					<td><%staff.getStaffPost(); %></td>
-					<td><%staff.getStaffAddress(); %></td>
-					<td><%staff.getStaffEmailAddress(); %></td>
-					<td><%staff.getStaffPhone(); %></td>
+					<td><%=staff.getStaffId()%></td>
+					<td><%=staff.getStaffName()%></td>
+					<td><%=staff.getStaffPost()%></td>
+					<td><%=staff.getStaffAddress() %></td>
+					<td><%=staff.getStaffEmailAddress()%></td>
+					<td><%=staff.getStaffPhone()%></td>
 					<td><a href="#" class="btn btn-primary"><span
 							class="icon-edit"></span> Edit</a> <a href="#" class="btn btn-danger"><span
 							class="icon-trash"></span> Delete</a> <a href="#"

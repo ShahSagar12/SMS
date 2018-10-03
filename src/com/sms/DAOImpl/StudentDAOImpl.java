@@ -79,7 +79,7 @@ public class StudentDAOImpl implements StudentDAO {
 		return student;
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	@Override
 	public List<Student> list() {
 		List<Student> allStudent=new ArrayList<>();
