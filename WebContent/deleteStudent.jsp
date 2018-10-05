@@ -16,7 +16,7 @@
 	StudentServiceImpl studentService=new StudentServiceImpl();
 	Student students=studentService.get(ida);	
 	%>
-<form method="post" action="deleteStudent">
+<form method="post" action="deleteStudent?id=<%=ida%>">
 <h3>Are you sure to delete the <a href="StudentInformation.jsp"><%=students.getStudentName()%></a> </h3>
 <input type="submit" value="Yes" /> 
 <input type="submit" value="No" onclick="form.action='liststudent.jsp'"/>

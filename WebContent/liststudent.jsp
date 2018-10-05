@@ -45,7 +45,7 @@
 						GO<span class="icon-search"></span>
 					</button>
 				</div>
-				<a href="addstudent.jsp" class="btn btn-success pull-right">Add
+				<a href="addStudent.jsp" class="btn btn-success pull-right">Add
 					Student</a>
 			</form>
 		</div>
@@ -53,7 +53,8 @@
 	StudentService studentService=new StudentServiceImpl();
 	List<Student> allStudent=studentService.list();
 	for(Student student:allStudent){
-		if(student.getStatus()==1){
+		if(student.getStatus()!=0){
+		
 	
 	%>
 		<div class="container">

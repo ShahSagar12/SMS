@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
-<%@ page import="com.sms.Model.Student" %>
 <%@ page import="com.sms.Model.Student" %>
 <%@ page import="com.sms.Service.StudentService" %>
 <%@ page import="com.sms.ServiceImpl.StudentServiceImpl" %>	
@@ -39,17 +37,17 @@
 		<div class="container-fluid">
 			<form action="EditStudent" method="post">
 				<label><b>Student Id</b></label>
-				<input name="studentid" type="text" class="form-control" placeholder="Updated ID" value="<%=ida%>"/>
+				<input name="studentid" type="text" class="form-control"  value="<%=ida%>"/>
 				<label><b>Student Name</b></label>
-				<input name="studentname" type="text" placeholder="Updated Name" value="<%=students.getStudentName() %>" />
+				<input name="studentname" type="text"  value="<%=students.getStudentName() %>" />
 				<label><b>Student Address</b></label>
-				<input name="studentaddress" type="text" placeholder="Updated Address" value="<%=students.getStudentAddress() %>" />
+				<input name="studentaddress" type="text" value="<%=students.getStudentAddress() %>" />
 				<label><b>Phone No.</b></label>
-				<input name="studentphone" type="text" placeholder="Updated Phone No" value="<%=students.getStudentPhoneNo() %>"  />
+				<input name="studentphone" type="text" value="<%=students.getStudentPhoneNo() %>"  />
 				<label><b>Father's Name</b></label>
-				<input name="fathername" type="text" placeholder="Updated Father Name" value="<%=students.getFatherName() %>" />
+				<input name="fathername" type="text"  value="<%=students.getFatherName() %>" />
 				<label><b>Mother's Name</b></label>
-				<input name="mothername" type="text" placeholder="Updated Mother Name" value="<%=students.getMotherName() %>" />
+				<input name="mothername" type="text"  value="<%=students.getMotherName() %>" />
 				<br>
 				<button class="btn btn-primary" type="submit" >EDIT</button>
 				

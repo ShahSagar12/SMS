@@ -82,7 +82,7 @@ public class StaffDAOImpl implements StaffDAO {
 		session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			Query query=session.createQuery("FROM Staff");
+			Query query=session.createQuery("FROM Staff staff Order by staff.id ASC");
 			allStaff=query.getResultList();
 			session.getTransaction().commit();
 			System.out.println("GET LIST SUCCESSFUL");

@@ -88,7 +88,7 @@ public class StudentDAOImpl implements StudentDAO {
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			Query query=session.createQuery("from Student Order by Student.id ASC");
+			Query query=session.createQuery("from Student student Order by student.id ASC");
 			allStudent=query.getResultList();
 			session.getTransaction().commit();
 			System.out.println("Student LISTED");	

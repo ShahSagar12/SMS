@@ -28,12 +28,19 @@ public class deleteController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id=request.getParameter("studentid");
-		int ida=Integer.parseInt(id);	
+		int ida=Integer.parseInt(request.getParameter("id"));
+		StudentServiceImpl studentService=new StudentServiceImpl();
+		Student students=studentService.get(ida);	
 		Student student=new Student();
-		student.setStudentId(ida);		
+		student.setStudentId(students.getStudentId());
+		student.setStudentName(students.getStudentName());
+		student.setFatherName(students.getFatherName());
+		student.setMotherName(students.getMotherName());
+		student.setStudentAddress(students.getStudentAddress());
+		student.setFatherName(students.getFatherName());
+		student.setStudentPhoneNo(students.getStudentPhoneNo());		
 		student.setStatus(0);
-		StudentService studentService=new StudentServiceImpl();
+		
 		studentService.update(student);	
 		response.sendRedirect("listStudent.jsp");
 	}

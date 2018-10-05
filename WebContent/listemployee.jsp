@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="com.sms.Model.Staff" %>
-<%@ page import="com.sms.Service.StaffService" %>
-<%@ page import="com.sms.ServiceImpl.StaffServiceImpl" %>	
-	
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.sms.Model.Staff"%>
+<%@ page import="com.sms.Service.StaffService"%>
+<%@ page import="com.sms.ServiceImpl.StaffServiceImpl"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +22,7 @@
 <link href='css/googleapi.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<jsp:include page="header.jsp" />
+	<jsp:include page="header.jsp" />
 	<jsp:include page="sidebar.jsp" />
 
 	<div id="content">
@@ -47,12 +47,12 @@
 				<a href="addemployee.jsp" class="btn btn-success pull-right">Add
 					Staff</a>
 			</form>
-			<%	
-			StaffService staffService=new StaffServiceImpl();
-	List<Staff> allStaff=staffService.list();
-	for(Staff staff:allStaff){
-	%>
-			
+			<%
+				StaffService staffService = new StaffServiceImpl();
+				List<Staff> allStaff = staffService.list();
+				for (Staff staff : allStaff) {
+			%>
+
 			<br>
 			<table class="table table-hover" border=1>
 				<thead>
@@ -70,11 +70,11 @@
 					<td><%=staff.getStaffId()%></td>
 					<td><%=staff.getStaffName()%></td>
 					<td><%=staff.getStaffPost()%></td>
-					<td><%=staff.getStaffAddress() %></td>
+					<td><%=staff.getStaffAddress()%></td>
 					<td><%=staff.getStaffEmailAddress()%></td>
 					<td><%=staff.getStaffPhone()%></td>
-					<td><a href="#" class="btn btn-primary"><span
-							class="icon-edit"></span> Edit</a> <a href="#" class="btn btn-danger"><span
+					<td><a href="editEmployee.jsp?id=<%=staff.getStaffId()%>" class="btn btn-primary"><span
+							class="icon-edit"></span> Edit</a> <a href="" class="btn btn-danger"><span
 							class="icon-trash"></span> Delete</a> <a href="#"
 						class="btn btn-success"><span class="icon-user"></span> View
 							Information</a></td>
@@ -85,7 +85,9 @@
 		</div>
 
 	</div>
-	<%} %>
+	<%
+		}
+	%>
 
 	<jsp:include page="footer.jsp" />
 </body>
