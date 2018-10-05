@@ -8,9 +8,9 @@
 		<li class="submenu"><a href="#"><i class="fas fa-user"></i> <span>Student</span>
 				<span class="label label-important">3</span></a>
 			<ul>
-				<li><a href="addstudent.jsp">Add Student</a></li>
+				<li><a href="addStudent.jsp">Add Student</a></li>
 				<li><a href="liststudent.jsp">Student List</a></li>
-				<li><a href="studentaccount.jsp">Student Account</a></li>
+				<li><a href="StudentAccount.jsp">Student Account</a></li>
 			</ul></li>
 		<li class="submenu"><a href="#"><i class="fas fa-user-tie"></i>
 				<span>Employee</span> <span class="label label-important">5</span></a>

@@ -18,7 +18,7 @@
 		<div id="content-header">
 			<div id="breadcrumb">
 				<a href="StudentList.jsp" title="Go to Student List" class="tip-bottom"><i
-					class="icon-home"></i> Student List</a>
+					class="icon-home"></i> Add Student</a>
 			</div>
 		</div>
 		<hr>

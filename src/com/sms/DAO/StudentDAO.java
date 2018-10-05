@@ -11,5 +11,6 @@ public interface StudentDAO {
 	
 	public Student get(int id);
 	public List<Student> list();
+	
 
 }

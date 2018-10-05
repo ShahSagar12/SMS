@@ -40,4 +40,14 @@ public class StudentServiceImpl implements StudentService {
 		return studentDAO.list();
 	}
 
+	@Override
+	public List<Student> list(int id) {
+		
+		return studentDAO.list();
+	}
+
+	
+	
+	
+
 }

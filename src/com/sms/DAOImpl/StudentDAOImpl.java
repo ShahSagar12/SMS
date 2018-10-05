@@ -14,8 +14,8 @@ import com.sms.dbutils.SessionConnector;
 
 public class StudentDAOImpl implements StudentDAO {
 	SessionFactory sessionFactory=SessionConnector.HbmConnect();
-	
-	@Override
+	Session session;
+		@Override
 	public int save(Student student) {
 		int register=0;
 		Session session=sessionFactory.openSession();
@@ -24,8 +24,8 @@ public class StudentDAOImpl implements StudentDAO {
 			register=(int) session.save(student);
 			session.getTransaction().commit();
 			System.out.println("Student SAVED");
-			
-			
+
+
 		}catch(Exception exp) {
 			System.out.println("ERROR:SAVING STUDENT "+exp);
 		}
@@ -40,16 +40,18 @@ public class StudentDAOImpl implements StudentDAO {
 			session.delete(student);
 			session.getTransaction().commit();
 			System.out.println("Student DELETED");
-			
-			
+
+
 		}catch(Exception exp) {
 			System.out.println("ERROR:DELETING STUDENT "+exp);
 		}
-		
+
 	}
 
 	@Override
 	public void update(Student student) {
+		int edit=0;
+		
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
@@ -57,36 +59,36 @@ public class StudentDAOImpl implements StudentDAO {
 			session.getTransaction().commit();
 			System.out.println("Student UPDATED");
 		}catch(Exception exp) {
-			System.out.println("ERROR:UPDATING STUDENT "+exp);
-	}
+			System.out.println("ERROR:UPDATING STUDENT "+exp);			
+		}	
 		
 	}
 
 	@Override
 	public Student get(int id) {
-		Student student=new Student();
+		Student student=null;
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			student=session.get(student.getClass(),id);
+			student=(Student)session.get(Student.class,id);
 			session.getTransaction().commit();
 			System.out.println("Student GOT");
-			
-			
+
+
 		}catch(Exception exp) {
 			System.out.println("ERROR:GETTING STUDENT "+exp);
 		}
 		return student;
 	}
 
-	
+
 	@Override
 	public List<Student> list() {
 		List<Student> allStudent=new ArrayList<>();
 		Session session=sessionFactory.openSession();
 		try {
 			session.beginTransaction();
-			Query query=session.createQuery("from Student");
+			Query query=session.createQuery("from Student Order by Student.id ASC");
 			allStudent=query.getResultList();
 			session.getTransaction().commit();
 			System.out.println("Student LISTED");	
@@ -94,8 +96,7 @@ public class StudentDAOImpl implements StudentDAO {
 			session.getTransaction().rollback();
 			System.out.println("ERROR:LISTING STUDENT "+exp);
 		}
-		
+
 		return allStudent;
 	}
-
 }
