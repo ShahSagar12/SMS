@@ -51,43 +51,44 @@
 				StaffService staffService = new StaffServiceImpl();
 				List<Staff> allStaff = staffService.list();
 				for (Staff staff : allStaff) {
+					if(staff.getStatus()!=0){
 			%>
 
 			<br>
 			<table class="table table-hover" border=1>
-				<thead>
-					<tr>
-						<td>Staff Id</td>
-						<td>Staff Name</td>
-						<td>Staff Post</td>
-						<td>Staff Address</td>
-						<td>Staff EmailAddress</td>
-						<td>Staff Phone</td>
-						<td>Action</td>
-					</tr>
-				</thead>
+
 				<tr>
-					<td><%=staff.getStaffId()%></td>
+					<th>Staff Name</th>
+					<th>Staff Post</th>
+					<th>Staff Address</th>
+					<th>Staff EmailAddress</th>
+					<th>Staff Phone</th>
+					<th>Action</th>
+				</tr>
+
+				<tr>
+
 					<td><%=staff.getStaffName()%></td>
 					<td><%=staff.getStaffPost()%></td>
 					<td><%=staff.getStaffAddress()%></td>
 					<td><%=staff.getStaffEmailAddress()%></td>
 					<td><%=staff.getStaffPhone()%></td>
-					<td><a href="editEmployee.jsp?id=<%=staff.getStaffId()%>" class="btn btn-primary"><span
-							class="icon-edit"></span> Edit</a> <a href="" class="btn btn-danger"><span
-							class="icon-trash"></span> Delete</a> <a href="#"
-						class="btn btn-success"><span class="icon-user"></span> View
-							Information</a></td>
+					<td><a href="editEmployee.jsp?id=<%=staff.getStaffId()%>"
+						class="btn btn-primary"><span class="icon-edit"></span> Edit</a> <a
+						href="deleteEmployee.jsp?id=<%=staff.getStaffId() %>" class="btn btn-danger"><span class="icon-trash"></span>
+							Delete</a> <a href="#" class="btn btn-success"><span
+							class="icon-user"></span> View Information</a></td>
 				</tr>
-
+				<%
+					}
+					}
+				%>
 			</table>
 
 		</div>
 
 	</div>
-	<%
-		}
-	%>
+
 
 	<jsp:include page="footer.jsp" />
 </body>

@@ -7,7 +7,7 @@
 <title>Saving</title>
 </head>
 <body>
-<h4>Do uh have more Student to Register???</h4>
+<h4>Do uh have more Employee to Register???</h4>
 <div class="row"><a href="addemployee.jsp">Yes</a>    <a href="index.jsp">No</a>
 </div>
 </body>

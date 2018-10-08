@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="com.sms.Model.Student" %>
-<%@ page import="com.sms.Model.Student" %>
 <%@ page import="com.sms.Service.StudentService" %>
 <%@ page import="com.sms.ServiceImpl.StudentServiceImpl" %>	
 <!DOCTYPE html>
@@ -13,7 +12,7 @@
 <body>
 <% 
 	int ida=Integer.parseInt(request.getParameter("id"));
-	StudentServiceImpl studentService=new StudentServiceImpl();
+	StudentService studentService=new StudentServiceImpl();
 	Student students=studentService.get(ida);	
 	%>
 <form method="post" action="deleteStudent?id=<%=ida%>">
